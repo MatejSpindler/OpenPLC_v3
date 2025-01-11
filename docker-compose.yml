@@ -1,0 +1,15 @@
+services:
+  OpenPLC_v3:
+    image: openplc:v3
+    #build: .
+    ports:
+      - "8080:8080"
+    restart: "unless-stopped"
+    volumes:
+      #- ./data:/docker_persistent
+      - docker_persistent:/docker_persistent
+      #- /dev/ttyACM0:/dev/ttyACM0
+      #- /dev/ttyUSB0:/dev/USBM0
+
+volumes:
+  docker_persistent:
